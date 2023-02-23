@@ -4,4 +4,6 @@ import pandas as pd
 
 np.array([1])
 with open('data/testdata.txt', 'w') as f:
-    f.write(datetime.now())
+    f.write(str(datetime.now()))
+
+print(datetime.now())
