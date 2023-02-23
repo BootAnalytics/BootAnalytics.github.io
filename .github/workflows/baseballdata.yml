@@ -2,7 +2,7 @@ name: baseball data
 
 on:
   schedule:
-    - cron: '0 * * * *' #Run Every Hour #'0 7 * * *' # Daily at 7 UTC (~1am CST)
+    - cron: '0 9 * 2-6 1,4' #9UTC on Monday and Thursday in Feb-June #'0 * * * *' #Run Every Hour 
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
       - name: execute py script # run main.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
-        run: python testrun.py
+        run: python baseballstats.py #testrun.py
           
       - name: commit files
         run: |
