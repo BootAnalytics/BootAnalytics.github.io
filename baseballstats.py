@@ -355,7 +355,7 @@ keygames['Value Team 2'] = '[#'+ keygames['Team 2 Value Ranking'].astype(str)+']
 html_key = '''<H2 id="KeyGames" style='text-align:left;font-family:"Raleway", sans-serif; font-weight: 330; font-size:30px; color: #406E8E';>Key Games This Week</H2>
 '''+keygames[['Overall Ranking Team 1','Value Team 1','Team 1','Overall Ranking Team 2','Value Team 2','Team 2','games']].to_html(index=False, table_id='KeyTable') + '''
 <p style="margin-bottom:0; padding:0px; color: #533747;">*Overall Rank combines Value (Hitting & Pitching Ability) and Strength of Record</p>
-<p style="margin-top:0; padding:0px; color: #533747;">*Based on my final 2022 Rankings</p>'''
+<p style="margin-top:0; padding:0px; color: #533747;">*Based on my current 2023 Rankings</p>'''
 
 
 
@@ -408,7 +408,7 @@ datelist =""
 for d in dates[::-1]:
     datelist += f"<option>{d}</option>"
 
-html_title = f'''<H1 style='text-align:center;font-family:"Raleway", sans-serif; font-weight: 330; font-size:40px; color: #406E8E'>2022 College Baseball Power Rankings</H1> 
+html_title = f'''<H1 style='text-align:center;font-family:"Raleway", sans-serif; font-weight: 330; font-size:40px; color: #406E8E'>2023 College Baseball Power Rankings</H1> 
 <i style='color: #533747'>Based on team performance, independent of tournament context</i> 
 <p style="margin-bottom : 0; padding : 1px; color: #533747"><b>Efficiency</b> -> On-Base Percentage & Baserunning Ability  |  <b>Explosiveness</b> -> Doubles, Triples, HRs Ability</p>
 <p style="margin : 0; padding : 1px; color: #533747"><b>SOR</b> -> Strength of Record compared to a team with a Value rating of 2 (~50th best team)</p>
