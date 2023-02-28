@@ -192,7 +192,7 @@ def sorrank(df2):
     allgames.loc[allgames['result']=='win', 'Win'] = 1
     allgames.loc[allgames['result']=='loss', 'Win'] = 0
 
-    allgames = pd.merge(allgames,powerrank(expected)[['Ranking', 'Value','school_id']],how='left',
+    allgames = pd.merge(allgames,powerrank(df2)[['Ranking', 'Value','school_id']],how='left',
              left_on='opponent_id', right_on='school_id')
     #allgames = allgames.merge(power4[['school_id','team']], how='left',left_on='school_id_x',right_on='school_id')
 
