@@ -281,7 +281,7 @@ from requests_html import HTMLSession
 
 #Generate URLs based on dates
 urls = [f"https://www.ncaa.com/scoreboard/baseball/d1/{d}/all-conf" for d in
-    list(pd.Series(pd.date_range(start="02/20/2023",periods=7)).dt.strftime('%Y/%m/%d'))]
+    list(pd.Series(pd.date_range(start="02/27/2023",periods=7)).dt.strftime('%Y/%m/%d'))]
 
 #Create DataFrame to contain the games from the week
 weekgamesdf = pd.DataFrame()
