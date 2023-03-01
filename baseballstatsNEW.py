@@ -211,7 +211,7 @@ def sorrank(df2):
 def overallrank(df3,date):
     df3 = df3
     stats = pd.merge(
-        powerrank(df3[df3['date']<=date]), sorrank(df3[df3['date']<=date])[['team','school_id_x', 'sos_value', 'sor', 'sor_rank']],
+        powerrank(df3[df3['date']<date]), sorrank(df3[df3['date']<date])[['team','school_id_x', 'sos_value', 'sor', 'sor_rank']],
         how='left', left_on='school_id', right_on='school_id_x'
     ).dropna()
 
