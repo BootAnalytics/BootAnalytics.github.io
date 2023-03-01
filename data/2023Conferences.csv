@@ -1,0 +1,298 @@
+,school,conference,school_id
+0,Virginia,(ACC),746
+1,New Mexico,(Mountain West),473
+2,Wake Forest,(ACC),749
+3,Kennesaw St.,(ASUN),1157
+4,Florida,(SEC),235
+5,Ole Miss,(SEC),433
+6,Oregon St.,(Pac-12),528
+7,Alabama,(SEC),8
+8,Texas Tech,(Big 12),700
+9,VMI,(SoCon),741
+10,Texas Southern,(SWAC),699
+11,Yale,(Ivy League),813
+12,FGCU,(ASUN),28755
+13,UNLV,(Mountain West),465
+14,Alabama St.,(SWAC),7
+15,Sam Houston,(WAC),624
+16,Old Dominion,(Sun Belt),523
+17,DBU,(C-USA),1045
+18,Auburn,(SEC),37
+19,Portland,(WCC),551
+20,App State,(Sun Belt),27
+21,Marshall,(Sun Belt),388
+22,Campbell,(Big South),115
+23,Coastal Carolina,(Sun Belt),149
+24,Georgia,(SEC),257
+25,LSU,(SEC),365
+26,CSUN,(Big West),101
+27,Louisville,(ACC),367
+28,Duke,(ACC),193
+29,Northeastern,(CAA),500
+30,Georgia Tech,(ACC),255
+31,Michigan St.,(Big Ten),416
+32,South Carolina,(SEC),648
+33,Fairfield,(MAAC),220
+34,Mississippi St.,(SEC),430
+35,Fla. Atlantic,(C-USA),229
+36,Troy,(Sun Belt),716
+37,Northern Ky.,(Horizon),505
+38,UTSA,(C-USA),706
+39,Middle Tenn.,(C-USA),419
+40,William & Mary,(CAA),786
+41,Pittsburgh,(ACC),545
+42,Florida St.,(ACC),234
+43,Miami,(ACC),415
+44,Southern California,(Pac-12),657
+45,TCU,(Big 12),698
+46,UTRGV,(WAC),536
+47,Clemson,(ACC),147
+48,NC State,(ACC),490
+49,Hofstra,(CAA),283
+50,Texas St.,(Sun Belt),670
+51,Xavier,(Big East),812
+52,Arkansas St.,(Sun Belt),30
+53,Kentucky,(SEC),334
+54,Memphis,(AAC),404
+55,Rhode Island,(Atlantic 10),572
+56,Missouri,(SEC),434
+57,UCF,(AAC),128
+58,Western Ky.,(C-USA),772
+59,A&M-Corpus Christi,(Southland),26172
+60,Southern U.,(SWAC),665
+61,Nebraska,(Big Ten),463
+62,Georgia St.,(Sun Belt),254
+63,Hawaii,(Big West),277
+64,Northern Colo.,(Summit League),502
+65,San Francisco,(WCC),629
+66,Arkansas,(SEC),31
+67,Tennessee,(SEC),694
+68,Valparaiso,(MVC),735
+69,Ohio,(MAC),519
+70,Harvard,(Ivy League),275
+71,Iowa,(Big Ten),312
+72,Mississippi Val.,(SWAC),432
+73,The Citadel,(SoCon),141
+74,Morehead St.,(OVC),444
+75,East Carolina,(AAC),196
+76,Wofford,(SoCon),2915
+77,Pacific,(WCC),534
+78,Penn St.,(Big Ten),539
+79,Stetson,(ASUN),678
+80,San Diego,(WCC),627
+81,Stanford,(Pac-12),674
+82,Abilene Christian,(WAC),2
+83,N.C. A&T,(CAA),488
+84,North Florida,(ASUN),2711
+85,Richmond,(Atlantic 10),575
+86,Purdue,(Big Ten),559
+87,James Madison,(Sun Belt),317
+88,SFA,(WAC),676
+89,Davidson,(Atlantic 10),173
+90,Oral Roberts,(Summit League),527
+91,NJIT,(America East),471
+92,Louisiana,(Sun Belt),671
+93,Arizona St.,(Pac-12),28
+94,Cal St. Fullerton,(Big West),97
+95,ETSU,(SoCon),198
+96,Washington St.,(Pac-12),754
+97,Kansas,(Big 12),328
+98,Coppin St.,(NEC),165
+99,Maine,(America East),380
+100,Wichita St.,(AAC),782
+101,North Carolina,(ACC),457
+102,USC Upstate,(Big South),10411
+103,Cal Poly,(Big West),90
+104,Virginia Tech,(ACC),742
+105,North Ala.,(ASUN),487
+106,Minnesota,(Big Ten),428
+107,Maryland,(Big Ten),392
+108,UCLA,(Pac-12),110
+109,Nevada,(Mountain West),466
+110,Southeastern La.,(Southland),655
+111,Illinois St.,(MVC),299
+112,Jacksonville St.,(ASUN),315
+113,Missouri St.,(MVC),669
+114,Arizona,(Pac-12),29
+115,Southern Miss.,(Sun Belt),664
+116,Georgetown,(Big East),251
+117,Sacred Heart,(NEC),590
+118,Illinois,(Big Ten),301
+119,George Washington,(Atlantic 10),249
+120,UNCW,(CAA),460
+121,Col. of Charleston,(CAA),1014
+122,Oklahoma,(Big 12),522
+123,Grand Canyon,(WAC),1104
+124,West Virginia,(Big 12),768
+125,Milwaukee,(Horizon),797
+126,Michigan,(Big Ten),418
+127,UAlbany,(America East),14
+128,Winthrop,(Big South),792
+129,Austin Peay,(ASUN),43
+130,VCU,(Atlantic 10),740
+131,ULM,(Sun Belt),498
+132,Boston College,(ACC),67
+133,High Point,(Big South),19651
+134,Navy,(Patriot),726
+135,Samford,(SoCon),625
+136,Lehigh,(Patriot),352
+137,Little Rock,(OVC),32
+138,Western Ill.,(Summit League),771
+139,UC Riverside,(Big West),111
+140,UC Santa Barbara,(Big West),104
+141,Santa Clara,(WCC),631
+142,Jackson St.,(SWAC),314
+143,Delaware,(CAA),180
+144,Eastern Ill.,(OVC),201
+145,Alcorn,(SWAC),17
+146,Bethune-Cookman,(SWAC),61
+147,Stony Brook,(CAA),683
+148,Wagner,(NEC),748
+149,Murray St.,(MVC),454
+150,Mercer,(SoCon),406
+151,Southern Ill.,(MVC),659
+152,Ohio St.,(Big Ten),518
+153,Long Beach St.,(Big West),99
+154,Monmouth,(CAA),439
+155,UNC Asheville,(Big South),456
+156,Oklahoma St.,(Big 12),521
+157,Delaware St.,(NEC),178
+158,Army West Point,(Patriot),725
+159,UIW,(Southland),2743
+160,Fairleigh Dickinson,(NEC),222
+161,Grambling,(SWAC),261
+162,Holy Cross,(Patriot),285
+163,CSU Bakersfield,(Big West),94
+164,UC Irvine,(Big West),109
+165,Western Caro.,(SoCon),769
+166,Kent St.,(MAC),331
+167,Central Ark.,(ASUN),1004
+168,Bradley,(MVC),72
+169,Nicholls,(Southland),483
+170,Miami,(MAC),414
+171,UC Davis,(Big West),108
+172,Ga. Southern,(Sun Belt),253
+173,Alabama A&M,(SWAC),6
+174,BYU,(WCC),77
+175,New Orleans,(Southland),474
+176,Rider,(MAAC),576
+177,South Fla.,(AAC),651
+178,Air Force,(Mountain West),721
+179,South Alabama,(Sun Belt),646
+180,Eastern Ky.,(ASUN),202
+181,Kansas St.,(Big 12),327
+182,SIUE,(OVC),660
+183,UMBC,(America East),391
+184,Saint Louis,(Atlantic 10),609
+185,UNC Greensboro,(SoCon),459
+186,Creighton,(Big East),169
+187,Gonzaga,(WCC),260
+188,McNeese,(Southland),402
+189,Northwestern St.,(Southland),508
+190,Pepperdine,(WCC),541
+191,Rice,(C-USA),574
+192,St. John's,(Big East),603
+193,Butler,(Big East),87
+194,UIC,(MVC),302
+195,Washington,(Pac-12),756
+196,Youngstown St.,(Horizon),817
+197,Central Mich.,(MAC),129
+198,UT Arlington,(WAC),702
+199,Utah Valley,(WAC),30024
+200,Evansville,(MVC),219
+201,Mount St. Mary's,(MAAC),450
+202,Charlotte,(C-USA),458
+203,Ball St.,(MAC),47
+204,Saint Mary's,(WCC),610
+205,Lamar University,(Southland),346
+206,Houston,(AAC),288
+207,Gardner-Webb,(Big South),1092
+208,Radford,(Big South),563
+209,South Dakota St.,(Summit League),649
+210,Quinnipiac,(MAAC),562
+211,Utah,(Pac-12),732
+212,Vanderbilt,(SEC),736
+213,Houston Christian,(Southland),287
+214,LIU,(NEC),361
+215,Lipscomb,(ASUN),28600
+216,California Baptist,(WAC),30135
+217,Indiana St.,(MVC),305
+218,Indiana,(Big Ten),306
+219,Presbyterian,(Big South),1320
+220,Niagara,(MAAC),482
+221,Southeast Mo. St.,(OVC),654
+222,Princeton,(Ivy League),554
+223,Elon,(CAA),1068
+224,Florida A&M,(SWAC),228
+225,UConn,(Big East),164
+226,California,(Pac-12),107
+227,Lafayette,(Patriot),342
+228,Texas A&M,(SEC),697
+229,George Mason,(Atlantic 10),248
+230,Louisiana Tech,(C-USA),366
+231,Saint Peter's,(MAAC),617
+232,Seton Hall,(Big East),635
+233,Seattle U,(WAC),1356
+234,Belmont,(MVC),14927
+235,Sacramento St.,(WAC),102
+236,Norfolk St.,(NEC),485
+237,Longwood,(Big South),363
+238,Jacksonville,(ASUN),316
+239,Akron,(MAC),5
+240,Baylor,(Big 12),51
+241,FIU,(C-USA),231
+242,UT Martin,(OVC),695
+243,Toledo,(MAC),709
+244,Rutgers,(Big Ten),587
+245,Villanova,(Big East),739
+246,Texas,(Big 12),703
+247,Tennessee Tech,(OVC),692
+248,Towson,(CAA),711
+249,Purdue Fort Wayne,(Horizon),308
+250,San Diego St.,(Mountain West),626
+251,Ark.-Pine Bluff,(SWAC),2678
+252,LMU,(WCC),370
+253,NIU,(MAC),503
+254,North Dakota St.,(Summit League),493
+255,Binghamton,(America East),62
+256,Fordham,(Atlantic 10),236
+257,Tulane,(AAC),718
+258,San Jose St.,(Mountain West),630
+259,Cornell,(Ivy League),167
+260,Omaha,(Summit League),464
+261,Fresno St.,(Mountain West),96
+262,UAB,(C-USA),9
+263,Brown,(Ivy League),80
+264,Cincinnati,(AAC),140
+265,Wright St.,(Horizon),810
+266,Eastern Mich.,(MAC),204
+267,St. Bonaventure,(Atlantic 10),596
+268,Penn,(Ivy League),540
+269,Iona,(MAAC),310
+270,Oregon,(Pac-12),529
+271,Prairie View,(SWAC),553
+272,Bowling Green,(MAC),71
+273,Bryant,(America East),81
+274,Bucknell,(Patriot),83
+275,Northwestern,(Big Ten),509
+276,UMES,(NEC),393
+277,Columbia,(Ivy League),158
+278,Western Mich.,(MAC),774
+279,Dartmouth,(Ivy League),172
+280,Marist,(MAAC),386
+281,Canisius,(MAAC),116
+282,Liberty,(ASUN),355
+283,New Mexico St.,(WAC),472
+284,Siena,(MAAC),639
+285,Oakland,(Horizon),514
+286,Saint Joseph's,(Atlantic 10),606
+287,UMass Lowell,(America East),368
+288,Manhattan,(MAAC),381
+289,Notre Dame,(ACC),513
+290,Charleston So.,(Big South),48
+291,Dayton,(Atlantic 10),175
+,Bellarmine,(ASUN),52
+,UC San Diego,(Big West),112
+,Tarleton St.,(WAC),1395
+,Dixie St.,(WAC),30095
+,Merrimack,(NEC),410
