@@ -426,7 +426,7 @@ for _,g in list(gamesdf.iterrows()):
 
 
 html_title = f'''<H1 style='text-align:center;font-family:"Raleway", sans-serif; font-weight: 330; font-size:40px; color: #406E8E'>2023 College Baseball Recap</H1> 
-<i style='color: #533747'>Based on my College Baseball Power Rankings</i> 
+<i style='color: #533747'>Based on my College Baseball Power Rankings</i> <a href="/">Baseball Rankings</a>
 '''
 
 
