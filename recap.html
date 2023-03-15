@@ -1,0 +1,72 @@
+<script type="text/javascript">
+
+window.onload=function(){
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mylist");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mylist");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+</script>
+<H1 style='text-align:center;font-family:"Raleway", sans-serif; font-weight: 330; font-size:40px; color: #406E8E'>2023 College Baseball Recap</H1> 
+<i style='color: #533747'>Based on my College Baseball Power Rankings</i> 
+<select id="mylist" onchange="myFunction()" class='form-control'><option>03/14/2023</option></select><table border="1" class="dataframe" id="myTable">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Recap</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>#165 Jacksonville St. upsets #5 Ole Miss 10-6. Jacksonville St. scored 6 Runs in the 3rd.</td>
+      <td>03/14/2023</td>
+    </tr>
+    <tr>
+      <td>#83 Elon upsets #6 NC State 14-6.</td>
+      <td>03/14/2023</td>
+    </tr>
+    <tr>
+      <td>#50 Coastal Carolina upsets #11 Campbell 12-9. Coastal Carolina scored 9 Runs in the 3rd.</td>
+      <td>03/14/2023</td>
+    </tr>
+    <tr>
+      <td>#113 UNCW upsets #13 East Carolina 8-5.</td>
+      <td>03/14/2023</td>
+    </tr>
+    <tr>
+      <td>#173 Nevada holds #24 Oregon St. to 1 run to secure an upset, 5 to 1. Nevada scored 4 Runs in the 1st.</td>
+      <td>03/14/2023</td>
+    </tr>
+  </tbody>
+</table></br></br></br>
