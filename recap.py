@@ -179,7 +179,7 @@ cond3 = "Pitcher_dual == 1"
 cond4 = "Slugfest == 1"
 
 #Get the 10 most important games, but sort them by highest ranked team
-gamesdf = gamesdf.query(cond1 +'|'+ cond2 +'|'+ cond3 +'|'+ cond4).assign(avg_rank = lambda x: (x['Overall Rank_x']+x['Overall Rank_y'])/2).assign(outcome = lambda x: (x['SOR_boost']+x['Major_upset']+x['Pitcher_dual']+x['Slugfest'])/x['avg_rank']).sort_values(by='outcome',ascending=False).dropna().head(int(topNumber)).assign(highestrank = lambda x: np.where(x['Overall Rank_x']<x['Overall Rank_y'],x['Overall Rank_x'],x['Overall Rank_y'])).sort_values(by='highestrank',ascending=True)
+gamesdf = gamesdf.query(cond1 +'|'+ cond2 +'|'+ cond3 +'|'+ cond4).assign(avg_rank = lambda x: (x['Overall Rank_x']+x['Overall Rank_y'])/2/np.where((x['Overall Rank_x']<11)|(x['Overall Rank_x']<11),2,1)).assign(outcome = lambda x: (x['SOR_boost']+x['Major_upset']+x['Pitcher_dual']+x['Slugfest'])/x['avg_rank']).sort_values(by='outcome',ascending=False).dropna().head(int(topNumber)).assign(highestrank = lambda x: np.where(x['Overall Rank_x']<x['Overall Rank_y'],x['Overall Rank_x'],x['Overall Rank_y'])).sort_values(by='highestrank',ascending=True)
 
 
 # In[15]:
@@ -440,8 +440,8 @@ html_title = f'''<H1 style='text-align:center;font-family:"Raleway", sans-serif;
 #COMBINE OLD TABLE WITH NEW TABLE
 try:
     recaptable = pd.read_csv('data/recaptable.csv').drop(columns='Unnamed: 0')
-    recaptable = pd.concat([pd.DataFrame(recaps, columns=['Recap']).assign(Date = date),recaptable])
-except: recaptable = pd.DataFrame(recaps, columns=['Recap']).assign(Date = date)
+    recaptable = pd.concat([pd.DataFrame(recaps, columns=['Recap']).assign(Date = date),recaptable]).drop_duplicates()
+except: recaptable = pd.DataFrame(recaps, columns=['Recap']).assign(Date = date).drop_duplicates()
 #GET DATES
 recaptable
 #EXPORT NEW TABLE
