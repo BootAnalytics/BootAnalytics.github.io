@@ -454,7 +454,7 @@ recaptable.to_csv('data/recaptable.csv')
 #List of Dates
 dates = list(recaptable.Date.unique())
 datelist=''
-for d in dates[::-1]:
+for d in dates:
     datelist += f"<option>{d}</option>"
 
 
