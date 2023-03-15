@@ -16,7 +16,8 @@ import re
 
 #date = "03/11/2023"
 date = (pd.to_datetime('today').date() + pd.tseries.offsets.DateOffset(n=-1)).strftime('%m/%d/%Y')
-
+dow = (pd.to_datetime('today') + pd.tseries.offsets.DateOffset(n=-1)).dayofweek
+topNumber = np.where(dow > 4, 10,3)
 
 # In[34]:
 
@@ -178,7 +179,7 @@ cond3 = "Pitcher_dual == 1"
 cond4 = "Slugfest == 1"
 
 #Get the 10 most important games, but sort them by highest ranked team
-gamesdf = gamesdf.query(cond1 +'|'+ cond2 +'|'+ cond3 +'|'+ cond4).assign(avg_rank = lambda x: (x['Overall Rank_x']+x['Overall Rank_y'])/2).assign(outcome = lambda x: (x['SOR_boost']+x['Major_upset']+x['Pitcher_dual']+x['Slugfest'])/x['avg_rank']).sort_values(by='outcome',ascending=False).dropna().head(10).assign(highestrank = lambda x: np.where(x['Overall Rank_x']<x['Overall Rank_y'],x['Overall Rank_x'],x['Overall Rank_y'])).sort_values(by='highestrank',ascending=True)
+gamesdf = gamesdf.query(cond1 +'|'+ cond2 +'|'+ cond3 +'|'+ cond4).assign(avg_rank = lambda x: (x['Overall Rank_x']+x['Overall Rank_y'])/2).assign(outcome = lambda x: (x['SOR_boost']+x['Major_upset']+x['Pitcher_dual']+x['Slugfest'])/x['avg_rank']).sort_values(by='outcome',ascending=False).dropna().head(int(topNumber)).assign(highestrank = lambda x: np.where(x['Overall Rank_x']<x['Overall Rank_y'],x['Overall Rank_x'],x['Overall Rank_y'])).sort_values(by='highestrank',ascending=True)
 
 
 # In[15]:
