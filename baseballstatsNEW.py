@@ -472,7 +472,7 @@ html_title = f'''<H1 style='text-align:center;font-family:"Raleway", sans-serif;
 
 
 <select id="mylist" onchange="tableFilters()" class='form-control'>''' + datelist + '''</select>
-<a href="#KeyGames">This Week's Key Games</a>''' + '''<select id="confs" onchange="tableFilters()" class='form-control'>'''+conflist+'''</select>'''
+<a href="#KeyGames">This Week's Key Games</a> | <a href="/recap.html">Recap</a>''' + '''<select id="confs" onchange="tableFilters()" class='form-control'>'''+conflist+'''</select>'''
 
 
 
@@ -555,3 +555,5 @@ th{
 html_output = html_css+ html_js + html_title + html_table +  html_key + "</br></br></br>"
 with open("index.html", "w", encoding = 'utf-8') as file:
     file.write(html_output)
+
+stats.to_csv("data/baseballrankings2023.csv")
