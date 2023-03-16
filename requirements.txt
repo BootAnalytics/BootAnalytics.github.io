@@ -2,5 +2,3 @@ numpy==1.23.4
 pandas==1.5.1
 requests_html==0.10.0
 statsmodels==0.11.1
-setuptools
-git+https://github.com/nathanblumenfeld/collegebaseball#egg=collegebaseball
