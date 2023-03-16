@@ -2,7 +2,7 @@ name: baseball data
 
 on:
   schedule:
-    - cron: '0 * * * *' #'0 * * * *' #'0 9 * 2-6 1,4' #9UTC on Monday and Thursday in Feb-June 
+    - cron: '0 9 * 2-6 *' #'0 * * * *' #'0 9 * 2-6 1,4' #9UTC on Monday and Thursday in Feb-June 
 
 jobs:
   build:
