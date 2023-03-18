@@ -17,7 +17,7 @@ import re
 #date = "03/11/2023"
 date = (pd.to_datetime('today').date() + pd.tseries.offsets.DateOffset(n=-1)).strftime('%m/%d/%Y')
 dow = (pd.to_datetime('today') + pd.tseries.offsets.DateOffset(n=-1)).dayofweek
-topNumber = np.where(dow > 4, 10,3)
+topNumber = np.where(dow >= 4, 10,3)
 
 # In[34]:
 
@@ -337,7 +337,7 @@ def getGameData(g):
     boxscore_2.columns = boxscore_2.iloc[1]
     
     
-    inn_convert = {'1':'1st', '2':'2nd','3':'3rd','4':'4th','5':'5th','6':'6th','7':'7th','8':'8th', '9':'9th'}
+    inn_convert = {'1':'1st', '2':'2nd','3':'3rd','4':'4th','5':'5th','6':'6th','7':'7th','8':'8th', '9':'9th','10':'10th','11':'11th','12':'12th'}
     #inn_convert = ['0th','1st','2nd','3rd', '4th','5th','6th','7th','8th','9th']
     
     tinnings = innings.T
