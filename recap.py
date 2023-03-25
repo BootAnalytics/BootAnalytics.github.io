@@ -316,18 +316,18 @@ def Slugfest(g):
     return f"{team1} outhits {team2}, combining for {score1+score2} runs, {score1} to {score2}."
 
 def getGameData(g):
-    team1 = ("#"+str(int(g['Overall Rank_x']))+" "+str(g['team_1']))
-    team2 = ("#"+str(int(g['Overall Rank_y']))+" "+str(g['team_2']))
-    score1 = int(g['runs_1'])
-    score2 = int(g['runs_2'])
-    gid = (g['game_id'])
-    codes = [g['SOR_boost'],g['Major_upset'],g['Pitcher_dual'],g['Slugfest']]
-    
-    game_url = f'https://stats.ncaa.org/contests/{gid}/box_score'
-    #Create a Session
-    game_session = HTMLSession()
-    game_r = game_session.get(game_url)
     try:
+        team1 = ("#"+str(int(g['Overall Rank_x']))+" "+str(g['team_1']))
+        team2 = ("#"+str(int(g['Overall Rank_y']))+" "+str(g['team_2']))
+        score1 = int(g['runs_1'])
+        score2 = int(g['runs_2'])
+        gid = (g['game_id'])
+        codes = [g['SOR_boost'],g['Major_upset'],g['Pitcher_dual'],g['Slugfest']]
+        
+        game_url = f'https://stats.ncaa.org/contests/{gid}/box_score'
+        #Create a Session
+        game_session = HTMLSession()
+        game_r = game_session.get(game_url)
         #Get Table Data
         innings = pd.read_html(game_r.html.find(".mytable")[0].html)[0]
         boxscore_1 = pd.read_html(game_r.html.find(".mytable")[1].html)[0].fillna(0)
@@ -335,56 +335,57 @@ def getGameData(g):
         #Assign Column Headers
         boxscore_1.columns = boxscore_1.iloc[1]
         boxscore_2.columns = boxscore_2.iloc[1]
-    except: print("ERROR:"+str(gid))
-    
-    
-    inn_convert = {'1':'1st', '2':'2nd','3':'3rd','4':'4th','5':'5th','6':'6th','7':'7th','8':'8th', '9':'9th','10':'10th','11':'11th','12':'12th'}
-    #inn_convert = ['0th','1st','2nd','3rd', '4th','5th','6th','7th','8th','9th']
-    
-    tinnings = innings.T
-    
-    texttemp = ''
-    textout = ''
-    #We actually already know the Total Runs (runs_1 or runs_2)
-    #We also know if team1 or team2 won
-    runs = max(score1,score2)
-    teams =['',str(g['team_1']),str(g['team_2'])]
-    if score1>score2:
-        winteam = 1
-    else: winteam = 2
+        
+        
+        
+        inn_convert = {'1':'1st', '2':'2nd','3':'3rd','4':'4th','5':'5th','6':'6th','7':'7th','8':'8th', '9':'9th','10':'10th','11':'11th','12':'12th'}
+        #inn_convert = ['0th','1st','2nd','3rd', '4th','5th','6th','7th','8th','9th']
+        
+        tinnings = innings.T
+        
+        texttemp = ''
+        textout = ''
+        #We actually already know the Total Runs (runs_1 or runs_2)
+        #We also know if team1 or team2 won
+        runs = max(score1,score2)
+        teams =['',str(g['team_1']),str(g['team_2'])]
+        if score1>score2:
+            winteam = 1
+        else: winteam = 2
 
-        
-    team1score = 0
-    team2score = 0
-    for _,i in tinnings.iterrows():
+            
+        team1score = 0
+        team2score = 0
+        for _,i in tinnings.iterrows():
 
-        
-        
-        try: #Skip Over Rows that aren't innings
-            if float(i[winteam]) > runs/2:
-                textout = f" {teams[winteam]} scored {int(i[winteam])} Runs in the " + inn_convert[str(int(i[0]))] + "."
+            
+            
+            try: #Skip Over Rows that aren't innings
+                if float(i[winteam]) > runs/2:
+                    textout = f" {teams[winteam]} scored {int(i[winteam])} Runs in the " + inn_convert[str(int(i[0]))] + "."
+                    
+
+
+                #Print if trailed by a lot
+                #print(f"Score After {int(i[0])}:")
+                team1score += float(i[1])
+                team2score += float(i[2])
+                margin = team1score - team2score #If T1 wins, negative is trailing; if T2 wins, positive is trailing
                 
-
-
-            #Print if trailed by a lot
-            #print(f"Score After {int(i[0])}:")
-            team1score += float(i[1])
-            team2score += float(i[2])
-            margin = team1score - team2score #If T1 wins, negative is trailing; if T2 wins, positive is trailing
-            
-            if (winteam == 1) & (margin <=-3):
-                texttemp = f" {teams[winteam]} trailed by {int(margin*-1)} after {int(i[0])} innings."
-            if (winteam == 2) & (margin >=3):
-                texttemp = f" {teams[winteam]} trailed by {int(margin)} after {int(i[0])} innings."
-            
-            
-            
-            
-        except ValueError: pass
-    
-    textout+=texttemp
+                if (winteam == 1) & (margin <=-3):
+                    texttemp = f" {teams[winteam]} trailed by {int(margin*-1)} after {int(i[0])} innings."
+                if (winteam == 2) & (margin >=3):
+                    texttemp = f" {teams[winteam]} trailed by {int(margin)} after {int(i[0])} innings."
+                
+                
+                
+                
+            except ValueError: pass
         
-    return(textout)
+        textout+=texttemp
+            
+        return(textout)
+    except: print(gid)
 
 
 # In[18]:
