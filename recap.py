@@ -327,14 +327,15 @@ def getGameData(g):
     #Create a Session
     game_session = HTMLSession()
     game_r = game_session.get(game_url)
-
-    #Get Table Data
-    innings = pd.read_html(game_r.html.find(".mytable")[0].html)[0]
-    boxscore_1 = pd.read_html(game_r.html.find(".mytable")[1].html)[0].fillna(0)
-    boxscore_2 = pd.read_html(game_r.html.find(".mytable")[2].html)[0].fillna(0)
-    #Assign Column Headers
-    boxscore_1.columns = boxscore_1.iloc[1]
-    boxscore_2.columns = boxscore_2.iloc[1]
+    try:
+        #Get Table Data
+        innings = pd.read_html(game_r.html.find(".mytable")[0].html)[0]
+        boxscore_1 = pd.read_html(game_r.html.find(".mytable")[1].html)[0].fillna(0)
+        boxscore_2 = pd.read_html(game_r.html.find(".mytable")[2].html)[0].fillna(0)
+        #Assign Column Headers
+        boxscore_1.columns = boxscore_1.iloc[1]
+        boxscore_2.columns = boxscore_2.iloc[1]
+    except: print("ERROR:"+str(gid))
     
     
     inn_convert = {'1':'1st', '2':'2nd','3':'3rd','4':'4th','5':'5th','6':'6th','7':'7th','8':'8th', '9':'9th','10':'10th','11':'11th','12':'12th'}
