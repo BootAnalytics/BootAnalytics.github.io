@@ -386,6 +386,7 @@ def getGameData(g):
             
         return(textout)
     except: print(gid)
+    return ("")
 
 
 # In[18]:

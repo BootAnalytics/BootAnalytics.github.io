@@ -329,10 +329,23 @@ getgames = pd.merge(weekgamesdf,stats[stats['rank_date']==stats['rank_date'].max
 
 #KEYGAMES = Both Teams in Top 50, sorted by closest Values
 
+#keygames = getgames[(getgames['Overall Rank_x']< 50)&(getgames['Overall Rank_y']< 50)].rename(columns={'Overall Rank_x':'Team 1 Overall Rank', 'Overall Rank_y':'Team 2 Overall Rank',
+#                                                                                           'Value_x':'Team 1 Value','Value_y':'Team 2 Value','team1': 'Team 1','team2': 'Team 2',
+#                                                                                                      'Ranking_x':'Team 1 Value Ranking','Ranking_y':'Team 2 Value Ranking'})\
+#[['Team 1 Overall Rank','Team 1 Value Ranking','Team 1 Value', 'Team 1', 'Team 2 Overall Rank','Team 2 Value Ranking', 'Team 2 Value', 'Team 2','games']]
+
 keygames = getgames[(getgames['Overall Rank_x']< 50)&(getgames['Overall Rank_y']< 50)].rename(columns={'Overall Rank_x':'Team 1 Overall Rank', 'Overall Rank_y':'Team 2 Overall Rank',
                                                                                            'Value_x':'Team 1 Value','Value_y':'Team 2 Value','team1': 'Team 1','team2': 'Team 2',
-                                                                                                      'Ranking_x':'Team 1 Value Ranking','Ranking_y':'Team 2 Value Ranking'})\
-[['Team 1 Overall Rank','Team 1 Value Ranking','Team 1 Value', 'Team 1', 'Team 2 Overall Rank','Team 2 Value Ranking', 'Team 2 Value', 'Team 2','games']]
+                                                                                                      'Ranking_x':'Team 1 Value Ranking','Ranking_y':'Team 2 Value Ranking'})
+keygames['Team1Value']=results_sor.predict(keygames['Team 1 Value']-keygames['Team 2 Value'])
+#keygames['Team1Eff']=eff_reg.predict(keygames[['Eff_HV_4_x','Eff_PV_4_y']])
+#keygames['Team1Exp']=eff_reg.predict(keygames[['Expl_HV_4_x','Expl_PV_4_y']])
+#keygames['Team2Eff']=eff_reg.predict(keygames[['Eff_HV_4_y','Eff_PV_4_x']])
+#keygames['Team2Exp']=eff_reg.predict(keygames[['Expl_HV_4_x','Expl_PV_4_x']])
+                                                                                                      
+keygames = keygames[['Team 1 Overall Rank','Team 1 Value Ranking','Team 1 Value', 'Team 1', 'Team 2 Overall Rank','Team 2 Value Ranking', 'Team 2 Value', 'Team 2','games',
+                    'Team1Value']]
+
 
 keygames['Team 1 Overall Rank'] = keygames['Team 1 Overall Rank'].astype(int)
 keygames['Team 2 Overall Rank'] = keygames['Team 2 Overall Rank'].astype(int)
@@ -340,7 +353,7 @@ keygames['Team 2 Overall Rank'] = keygames['Team 2 Overall Rank'].astype(int)
 keygames['Team 1 Value Ranking'] = keygames['Team 1 Value Ranking'].astype(int)
 keygames['Team 2 Value Ranking'] = keygames['Team 2 Value Ranking'].astype(int)
 
-
+keygames['Prediction'] = np.where(keygames['Team1Value']>0.5,keygames['Team 1'] +" "+ ((keygames['Team1Value'].round(2))*100).round(0).astype(int).astype(str)+"%",keygames['Team 2'] +" "+ ((1-keygames['Team1Value'].round(2))*100).round(0).astype(int).astype(str)+"%")
 
 #CLEAN/FORMAT TABLE
 keygames['Overall Ranking Team 1 [Value Rank] Value Pts'] = '#'+keygames['Team 1 Overall Rank'].astype(str)+'   [#'+ keygames['Team 1 Value Ranking'].astype(str)+']   ' + keygames['Team 1 Value'].astype(str)+'pts ' + keygames['Team 1'].astype(str)
@@ -353,7 +366,7 @@ keygames['Value Team 2'] = '[#'+ keygames['Team 2 Value Ranking'].astype(str)+']
 
 #WEBSITE OUTPUT**********
 html_key = '''<H2 id="KeyGames" style='text-align:left;font-family:"Raleway", sans-serif; font-weight: 330; font-size:30px; color: #406E8E';>Key Games This Week</H2>
-'''+keygames[['Overall Ranking Team 1','Value Team 1','Team 1','Overall Ranking Team 2','Value Team 2','Team 2','games']].to_html(index=False, table_id='KeyTable') + '''
+'''+keygames[['Overall Ranking Team 1','Value Team 1','Team 1','Overall Ranking Team 2','Value Team 2','Team 2','games','Prediction']].to_html(index=False, table_id='KeyTable') + '''
 <p style="margin-bottom:0; padding:0px; color: #533747;">*Overall Rank combines Value (Hitting & Pitching Ability) and Strength of Record</p>
 <p style="margin-top:0; padding:0px; color: #533747;">*Based on my current 2023 Rankings</p>'''
 
